@@ -1,233 +1,243 @@
-# 📊 Penerapan Algoritma Apriori untuk Market Basket Analysis
+📊 Penerapan Algoritma Apriori untuk Market Basket Analysis
 
-## 📖 Deskripsi Proyek
+> Implementasi Algoritma Apriori secara manual (without Apriori library) menggunakan Python untuk menemukan pola pembelian pelanggan (Market Basket Analysis).
 
-Project ini merupakan implementasi *Algoritma Apriori* secara *manual (without library Apriori)* menggunakan Python untuk menemukan pola pembelian pelanggan (Market Basket Analysis).
 
-Implementasi dilakukan tanpa menggunakan library khusus seperti mlxtend.frequent_patterns.apriori, sehingga seluruh proses mulai dari pembentukan kandidat, perhitungan support, pruning, hingga pembentukan association rules dibuat secara mandiri.
 
-Project ini dibuat sebagai tugas mata kuliah *Machine Learning*.
 
 ---
 
-## 🎯 Tujuan
+📌 Informasi Project
 
-- Mengimplementasikan algoritma Apriori dari awal.
-- Menemukan Frequent Itemset.
-- Membentuk Association Rules.
-- Menghitung Support, Confidence, dan Lift.
-- Memahami proses kerja Apriori secara manual.
+Informasi	Keterangan
 
----
+Mata Kuliah	Machine Learning
+Metode	Algoritma Apriori
+Bahasa	Python
+Tools	Jupyter Notebook
+Dataset	Market Basket Optimisation
+Total Transaksi	7.501
+Jumlah Item	120
 
-## 📂 Dataset
 
-Dataset yang digunakan:
-
-*Market Basket Optimisation Dataset*
-
-- Jumlah transaksi : *7.501*
-- Jumlah produk : *120 item*
-
-Dataset berisi transaksi pembelian pelanggan supermarket yang digunakan untuk mencari pola hubungan antar produk.
 
 ---
 
-## ⚙️ Tahapan Algoritma
+🎯 Tujuan
 
-Implementasi terdiri dari beberapa tahapan berikut:
+Project ini bertujuan untuk:
 
-1. Import Library
-2. Load Dataset
-3. Data Preprocessing
-4. Membentuk Transaction List
-5. Mengubah Data menjadi Set
-6. Menghitung Support
-7. Candidate Generation
-8. Frequent Itemset
-9. Apriori Property (Pruning)
-10. Association Rule
-11. Perhitungan Confidence
-12. Perhitungan Lift
-13. Visualisasi Hasil
+Mengimplementasikan algoritma Apriori tanpa library khusus.
+
+Menghitung Support, Confidence, dan Lift secara manual.
+
+Menemukan Frequent Itemset.
+
+Membentuk Association Rules.
+
+Menganalisis pola pembelian pelanggan.
+
+
 
 ---
 
-## 📈 Parameter
+📂 Struktur Repository
 
-| Parameter | Nilai |
-|-----------|--------|
-| Minimum Support | 0.02 (2%) |
+UAS_ML_APRIORI
+│
+├── Apriori_Market_Basket.ipynb
+├── Market_Basket_Optimisation.csv
+├── README.md
+└── assets/
 
----
-
-## 📊 Hasil Frequent Itemset
-
-| Level | Kandidat | Frequent Itemset |
-|-------|----------:|-----------------:|
-| Level 1 | 120 | 53 |
-| Level 2 | 1.378 | 50 |
-| Level 3 | 61 | 0 |
 
 ---
 
-## 📚 Rumus yang Digunakan
+⚙️ Library yang Digunakan
 
-### Support
+pandas
+numpy
+matplotlib
+itertools
+collections
+time
 
-\[
-Support(A)=\frac{Jumlah\ transaksi\ yang\ mengandung\ A}{Jumlah\ seluruh\ transaksi}
-\]
+Install library
 
----
+pip install pandas numpy matplotlib
 
-### Confidence
-
-\[
-Confidence(A→B)=
-\frac{Support(A∩B)}
-{Support(A)}
-\]
 
 ---
 
-### Lift
+🔄 Alur Algoritma
 
-\[
-Lift=
-\frac{Confidence(A→B)}
-{Support(B)}
-\]
-
----
-
-## 🔄 Alur Algoritma
-
-text
 Dataset
-   │
-   ▼
+      │
+      ▼
 Preprocessing
-   │
-   ▼
+      │
+      ▼
 Hitung Support
-   │
-   ▼
+      │
+      ▼
 Frequent 1-itemset
-   │
-   ▼
+      │
+      ▼
 Generate Candidate
-   │
-   ▼
+      │
+      ▼
 Frequent 2-itemset
-   │
-   ▼
+      │
+      ▼
 Join
-   │
-   ▼
-Pruning (Apriori Property)
-   │
-   ▼
+      │
+      ▼
+Apriori Property
+      │
+      ▼
+Pruning
+      │
+      ▼
 Frequent 3-itemset
-   │
-   ▼
-Association Rules
-   │
-   ▼
+      │
+      ▼
+Association Rule
+      │
+      ▼
 Confidence
-   │
-   ▼
+      │
+      ▼
 Lift
 
 
 ---
 
-## 📌 Apriori Property
+📈 Hasil Frequent Itemset
 
-Algoritma Apriori menggunakan prinsip:
+Level	Candidate	Frequent
 
-> *Jika suatu itemset tidak memenuhi minimum support, maka semua superset yang mengandung item tersebut juga tidak mungkin memenuhi minimum support.*
+1	120	53
+2	1.378	50
+3	61	0
 
-Prinsip ini digunakan untuk melakukan *pruning* sehingga proses pencarian menjadi lebih efisien.
-
----
-
-## 📊 Visualisasi
-
-Project ini menampilkan beberapa visualisasi, antara lain:
-
-- Distribusi transaksi
-- Top Frequent Item
-- Top Frequent Itemset
-- Scatter Plot Support vs Confidence
-- Top Association Rules berdasarkan Lift
-
----
-
-## 🛠️ Teknologi
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- itertools
-- collections
-- time
-
----
-
-## 📁 Struktur Project
-
-
-├── Apriori_Market_Basket.ipynb
-├── Market_Basket_Optimisation.csv
-├── README.md
 
 
 ---
 
-## 🚀 Cara Menjalankan
+📊 Rumus
 
-1. Clone repository
+Support
 
-bash
-git clone https://github.com/username/repository.git
-
-
-2. Masuk ke folder project
-
-bash
-cd repository
+Support(A)=\frac{\text{Jumlah transaksi mengandung A}}{\text{Jumlah seluruh transaksi}}
 
 
-3. Install library
+---
 
-bash
+Confidence
+
+Confidence(A→B)=
+\frac{Support(A∩B)}
+{Support(A)}
+
+
+---
+
+Lift
+
+Lift=
+\frac{Confidence(A→B)}
+{Support(B)}
+
+
+---
+
+📌 Apriori Property
+
+> Jika suatu itemset tidak memenuhi minimum support, maka seluruh superset yang mengandung item tersebut juga tidak mungkin memenuhi minimum support.
+
+
+
+Prinsip ini digunakan untuk mengurangi jumlah kandidat (pruning) sehingga proses pencarian menjadi lebih efisien.
+
+
+---
+
+🚀 Cara Menjalankan
+
+Clone repository
+
+git clone https://github.com/SaraSafitri1804/UAS_ML_APRIORI.git
+
+Masuk ke folder
+
+cd UAS_ML_APRIORI
+
+Install library
+
 pip install pandas numpy matplotlib
 
+Jalankan
 
-4. Jalankan notebook
-
-bash
 jupyter notebook
 
-
-Kemudian buka file:
-
+Buka file
 
 Apriori_Market_Basket.ipynb
 
 
 ---
 
-## 📌 Kesimpulan
+📊 Hasil Analisis
 
-Implementasi berhasil menemukan pola pembelian pelanggan menggunakan Algoritma Apriori secara manual. Dengan menerapkan proses *candidate generation, **Apriori Property, **support, **confidence, dan **lift*, sistem mampu menghasilkan association rules yang dapat dimanfaatkan sebagai dasar rekomendasi produk, strategi promosi, serta penataan produk pada Market Basket Analysis.
+Implementasi berhasil menemukan pola pembelian pelanggan menggunakan Algoritma Apriori.
+
+Dengan minimum support 2%, diperoleh:
+
+53 Frequent 1-itemset
+
+50 Frequent 2-itemset
+
+Tidak ditemukan Frequent 3-itemset
+
+
+Association Rules kemudian dibentuk menggunakan nilai Confidence dan Lift.
+
 
 ---
 
-## 👩‍💻 Author
+📷 Output Program
 
-*Juwita Sara Safitri*  
-Teknik Informatika  
+Tambahkan hasil screenshot seperti:
+
+assets/
+├── dataset.png
+├── support.png
+├── frequent_itemset.png
+├── association_rules.png
+└── lift.png
+
+Lalu tampilkan pada README:
+
+## Hasil Program
+
+### Dataset
+
+![Dataset](assets/dataset.png)
+
+### Frequent Itemset
+
+![Frequent](assets/frequent_itemset.png)
+
+### Association Rules
+
+![Rules](assets/association_rules.png)
+
+
+---
+
+👩‍💻 Author
+
+Juwita Sara Safitri
+NIM: 24260006
+Program Studi Teknik Informatika
 Universitas Nahdlatul Ulama Indonesia Bogor
