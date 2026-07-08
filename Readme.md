@@ -73,24 +73,11 @@ Implementasi algoritma dilakukan melalui tahapan berikut:
 
 ## 📚 Rumus yang Digunakan
 
-### Support
-
-\[
-Support(A)=\frac{Jumlah\ transaksi\ yang\ mengandung\ A}{Jumlah\ seluruh\ transaksi}
-\]
-
-### Confidence
-
-\[
-Confidence(A→B)=\frac{Support(A∩B)}{Support(A)}
-\]
-
-### Lift
-
-\[
-Lift=\frac{Confidence(A→B)}{Support(B)}
-\]
-
+| Metode | Rumus |
+|--------|-------|
+| **Support** | `Support(A) = Jumlah transaksi mengandung A / Jumlah seluruh transaksi` |
+| **Confidence** | `Confidence(A→B) = Support(A∩B) / Support(A)` |
+| **Lift** | `Lift(A→B) = Confidence(A→B) / Support(B)` |
 ---
 
 ## 🔄 Alur Algoritma
